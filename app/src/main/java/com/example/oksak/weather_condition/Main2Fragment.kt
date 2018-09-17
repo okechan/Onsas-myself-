@@ -16,7 +16,9 @@ import rx.schedulers.Schedulers
 class Main2Fragment : Fragment() {
     private val textview: TextView? = null
     private var Ap: Asy_pro? = null
-    var str: String? = null
+    private var Jc: Japanese_changer? = null
+    var str: String?  =null
+    var str2:String? = null
     var adapter: RestAdapter? = null
 
 
@@ -24,6 +26,7 @@ class Main2Fragment : Fragment() {
         val v = inflater!!.inflate(R.layout.fragment_main2, container, false)
         Ap = Asy_pro()
         adapter = Ap!!.Asch_rest()
+        Jc = Japanese_changer()
         return v
     }
 
@@ -45,7 +48,9 @@ class Main2Fragment : Fragment() {
                     override fun onNext(weather: Entity?) {
                         Log.d("MainActivity", "onNext()")
                         if (weather != null) {
-                            (view!!.findViewById<View>(R.id.text2) as TextView).text = weather.weather!![0].main
+                            (view!!.findViewById<View>(R.id.text1) as TextView).text = Jc?.main_weather(weather.weather!![0].main)
+                            (view!!.findViewById<View>(R.id.text2) as TextView).text = Jc?.description(weather.weather!![0].description)
+
                         }
                     }
                 })
