@@ -76,7 +76,7 @@ class Japanese_changer {
             "scattered clouds" -> str = "千切れ雲"
             "broken clouds" -> str = "雲がち"
             "overcast clouds" -> str = "曇り"
-            else -> name
+            else -> str = name
         }
         str
     }

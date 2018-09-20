@@ -1,7 +1,7 @@
 package com.example.oksak.weather_condition
 
-import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +13,7 @@ import rx.Observer
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
-class Main2Fragment : Fragment() {
+class Main2Fragment:Fragment(){
     private val textview: TextView? = null
     private var Ap: Asy_pro? = null
     private var Jc: Japanese_changer? = null
@@ -33,7 +33,7 @@ class Main2Fragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter?.create(weather::class.java)?.get("weather", "1850147", "metric", "0869798082100b3e32ee11aa90070fc4")
+        adapter?.create(weather::class.java)?.get("weather", "1857871", "metric", "0869798082100b3e32ee11aa90070fc4")
                 ?.subscribeOn(Schedulers.newThread())
                 ?.observeOn(AndroidSchedulers.mainThread())
                 ?.subscribe(object : Observer<Entity> {
