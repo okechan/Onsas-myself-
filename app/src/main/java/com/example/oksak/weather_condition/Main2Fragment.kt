@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 
 import retrofit.RestAdapter
@@ -17,8 +18,11 @@ class Main2Fragment:Fragment(){
     private val textview: TextView? = null
     private var Ap: Asy_pro? = null
     private var Jc: Japanese_changer? = null
+    private var Ij: icon_judge? = null
     var str: String?  =null
     var str2:String? = null
+    var Imageid:Int = R.drawable.clear
+
     var adapter: RestAdapter? = null
 
 
@@ -27,6 +31,7 @@ class Main2Fragment:Fragment(){
         Ap = Asy_pro()
         adapter = Ap!!.Asch_rest()
         Jc = Japanese_changer()
+        Ij = icon_judge()
         return v
     }
 
@@ -48,9 +53,10 @@ class Main2Fragment:Fragment(){
                     override fun onNext(weather: Entity?) {
                         Log.d("MainActivity", "onNext()")
                         if (weather != null) {
+                            Imageid = Ij!!.icon_judger(weather.weather!![0].main)
                             (view!!.findViewById<View>(R.id.text1) as TextView).text = Jc?.main_weather(weather.weather!![0].main)
                             (view!!.findViewById<View>(R.id.text2) as TextView).text = Jc?.description(weather.weather!![0].description)
-
+                            (view!!.findViewById<View>(R.id.imageView) as ImageView)?.setImageResource(Imageid)
                         }
                     }
                 })

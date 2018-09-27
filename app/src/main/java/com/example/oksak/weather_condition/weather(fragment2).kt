@@ -7,5 +7,5 @@ import rx.Observable
 
 interface `weather` {
     @GET("/data/2.5/{name}")
-    operator fun get(@Path("name") name: String, @Query("id") q: String, @Query("unit") unit: String, @Query("appid") appid: String): Observable<`Entity`>
+    operator fun get(@Path("name") name: String, @Query("id") q: String, @Query("units") unit: String, @Query("appid") appid: String): Observable<`Entity`>
 }
