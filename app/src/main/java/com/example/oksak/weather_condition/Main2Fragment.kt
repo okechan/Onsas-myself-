@@ -58,8 +58,10 @@ class Main2Fragment:Fragment(){
                             (view!!.findViewById<View>(R.id.text2) as TextView).text = Jc?.description(weather.weather!![0].description)
                             (view!!.findViewById<View>(R.id.imageView) as ImageView)?.setImageResource(Imageid)
                             (view!!.findViewById<View>(R.id.text3)as TextView).text = weather.main?.temp.toString()
-                            (view!!.findViewById<View>(R.id.text4)as TextView).text = weather.main?.temp_max.toString()
-                            
+                            (view!!.findViewById<View>(R.id.text4)as TextView).text = weather.main?.temp_min.toString()
+                            (view!!.findViewById<View>(R.id.text5)as TextView).text = weather.main?.temp_max.toString()
+
+
                         }
                     }
                 })

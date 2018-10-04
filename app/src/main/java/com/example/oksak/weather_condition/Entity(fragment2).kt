@@ -15,7 +15,7 @@ class `Entity` {
         var temp: Float? = null
         var pressure: Int = 0
         var humidity: Int = 0
-        var temp_min: Int = 0
-        var temp_max: Int = 0
+        var temp_min: Float? = null
+        var temp_max: Float? = null
     }
 }
