@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = OriginalFragmentPagerAdapter(supportFragmentManager)
         val viewPager = findViewById<ViewPager>(R.id.viewPager)
-        viewPager.offscreenPageLimit = 4
+        viewPager.offscreenPageLimit = 2
         viewPager.adapter = adapter
 
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)

@@ -60,8 +60,6 @@ class Main2Fragment:Fragment(){
                             (view!!.findViewById<View>(R.id.text3)as TextView).text = weather.main?.temp.toString()
                             (view!!.findViewById<View>(R.id.text4)as TextView).text = weather.main?.temp_min.toString()
                             (view!!.findViewById<View>(R.id.text5)as TextView).text = weather.main?.temp_max.toString()
-
-
                         }
                     }
                 })
